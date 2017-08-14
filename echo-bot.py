@@ -1,6 +1,11 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
-print("hello world!")
-print("let's make some bots!")
 
-name = input("input your name: ")
-print("Hello, " + name + "!")
+import config_echo
+import telebot
+
+bot = telebot.TeleBot(config_echo.token)
+
+@bot.message_handler(content_types=["text"])
+def repeat_messages(message):
+	bot.send_message(message.chat.id, message.text)

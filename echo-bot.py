@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
 
-import config_echo
+import config
 import telebot
 
-bot = telebot.TeleBot(config_echo.token)
+bot = telebot.TeleBot(config.token)
 
 # обработчик, который реагирует на все входящие сообщения
 @bot.message_handler(content_types=["text"])
